@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Worlds/Ira/IraTiles.tres" type="TileSet" id=1]
+
+[sub_resource type="CSharpScript" id=1]
+resource_name = "IraMapCreator"
+script/source = "using Godot;
+using System;
+
+public class IraMapCreator : Node2D
+{
+	// Declare member variables here. Examples:
+	// private int a = 2;
+	// private string b = \"text\";
+
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		
+	}
+
+//  // Called every frame. 'delta' is the elapsed time since the previous frame.
+//  public override void _Process(float delta)
+//  {
+//      
+//  }
+}
+"
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Camera2D
+func _input(_event):
+	if Input.is_action_pressed(\"Interact\"):
+		zoom.x -= 1
+		zoom.y -= 1.25
+	elif Input.is_action_pressed(\"ChangeWeapon\"):
+		zoom.x += 1
+		zoom.y += 1.25
+	elif Input.is_action_pressed(\"ui_up\"):
+		offset_v -= 10
+	elif Input.is_action_pressed(\"ui_down\"):
+		offset_v += 10
+	elif Input.is_action_pressed(\"ui_left\"):
+		offset_h -= 10
+	elif Input.is_action_pressed(\"ui_right\"):
+		offset_h += 10
+"
+
+[node name="IraMapCreator" type="Node2D"]
+script = SubResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+collision_layer = 4294868991
+collision_mask = 252608511
+format = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 10374, 8611 )
+current = true
+zoom = Vector2( 30, 40 )
+script = SubResource( 2 )

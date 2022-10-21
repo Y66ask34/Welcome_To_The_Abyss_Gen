@@ -1,0 +1,200 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Tiles/NullTiles/NullTiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Player/Strangeguy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Worlds/Hub/TeleportArea.gd" type="Script" id=9]
+[ext_resource path="res://Objects/Dummy/Dummy.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objects/Weapons/DivineWeapons/StarEater/StarEater.tscn" type="PackedScene" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7080, 32 )
+
+[node name="TestWorld" type="Node2D" groups=["PARENT_SCENE"]]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( -928, 0 )
+tile_set = ExtResource( 1 )
+collision_layer = 4294868991
+collision_mask = 4294868991
+format = 1
+tile_data = PoolIntArray( 65521, 0, 196608, 65522, 0, 196609, 65523, 0, 6, 65524, 0, 1, 65525, 0, 1, 65526, 0, 1, 65527, 0, 1, 65528, 0, 1, 65529, 0, 1, 65530, 0, 1, 65531, 0, 1, 65532, 0, 1, 65533, 0, 1, 65534, 0, 1, 65535, 0, 1, 0, 0, 1, 1, 0, 1, 2, 0, 1, 3, 0, 1, 4, 0, 1, 5, 0, 1, 6, 0, 1, 7, 0, 1, 8, 0, 1, 9, 0, 1, 10, 0, 1, 11, 0, 1, 12, 0, 1, 13, 0, 1, 14, 0, 1, 15, 0, 1, 16, 0, 1, 17, 0, 1, 18, 0, 1, 19, 0, 1, 20, 0, 1, 21, 0, 1, 22, 0, 1, 23, 0, 1, 24, 0, 1, 25, 0, 1, 26, 0, 1, 27, 0, 1, 28, 0, 1, 29, 0, 1, 30, 0, 1, 31, 0, 1, 32, 0, 1, 33, 0, 1, 34, 0, 1, 35, 0, 1, 36, 0, 1, 37, 0, 1, 38, 0, 1, 39, 0, 1, 40, 0, 1, 41, 0, 5, 42, 0, 196609, 43, 0, 196609, 44, 0, 196609, 45, 0, 196609, 46, 0, 196609, 47, 0, 196609, 48, 0, 196609, 49, 0, 196609, 50, 0, 196609, 51, 0, 196609, 52, 0, 196609, 53, 0, 196609, 54, 0, 196609, 55, 0, 196609, 56, 0, 196609, 57, 0, 196609, 58, 0, 196609, 59, 0, 196609, 60, 0, 196609, 61, 0, 196609, 62, 0, 196609, 63, 0, 196609, 64, 0, 196609, 65, 0, 196609, 66, 0, 196609, 67, 0, 196609, 68, 0, 196609, 69, 0, 196609, 70, 0, 196609, 71, 0, 196609, 72, 0, 196609, 73, 0, 196609, 74, 0, 196609, 75, 0, 196609, 76, 0, 196609, 77, 0, 196609, 78, 0, 196609, 79, 0, 196609, 80, 0, 196609, 81, 0, 196609, 82, 0, 196609, 83, 0, 196609, 84, 0, 196609, 85, 0, 196609, 86, 0, 196609, 87, 0, 196609, 88, 0, 196609, 89, 0, 196609, 90, 0, 196609, 91, 0, 196609, 92, 0, 196609, 93, 0, 196609, 94, 0, 196609, 95, 0, 196609, 96, 0, 196609, 97, 0, 196609, 98, 0, 196609, 99, 0, 196609, 100, 0, 196610, 131059, 0, 131072, 131060, 0, 131073, 131061, 0, 65542, 131062, 0, 65537, 131063, 0, 65537, 131064, 0, 65537, 131065, 0, 65537, 131066, 0, 65537, 131067, 0, 65537, 131068, 0, 65537, 131069, 0, 65537, 131070, 0, 65537, 131071, 0, 65537, 65536, 0, 65537, 65537, 0, 65537, 65538, 0, 65537, 65539, 0, 65537, 65540, 0, 65537, 65541, 0, 65537, 65542, 0, 65537, 65543, 0, 65537, 65544, 0, 65537, 65545, 0, 65537, 65546, 0, 65541, 65547, 0, 131073, 65548, 0, 131073, 65549, 0, 131073, 65550, 0, 131073, 65551, 0, 131073, 65552, 0, 131073, 65553, 0, 131073, 65554, 0, 65542, 65555, 0, 65537, 65556, 0, 65537, 65557, 0, 65537, 65558, 0, 65537, 65559, 0, 65537, 65560, 0, 65537, 65561, 0, 65537, 65562, 0, 65537, 65563, 0, 65537, 65564, 0, 65537, 65565, 0, 65537, 65566, 0, 65537, 65567, 0, 65537, 65568, 0, 65537, 65569, 0, 65537, 65570, 0, 65537, 65571, 0, 65537, 65572, 0, 65537, 65573, 0, 65537, 65574, 0, 65537, 65575, 0, 65541, 65576, 0, 131073, 65577, 0, 131074, 196597, 0, 131072, 196598, 0, 131073, 196599, 0, 131073, 196600, 0, 65542, 196601, 0, 65537, 196602, 0, 65537, 196603, 0, 65537, 196604, 0, 65537, 196605, 0, 65537, 196606, 0, 65537, 196607, 0, 65537, 131072, 0, 65537, 131073, 0, 65537, 131074, 0, 65537, 131075, 0, 65537, 131076, 0, 65537, 131077, 0, 65537, 131078, 0, 65537, 131079, 0, 65541, 131080, 0, 131073, 131081, 0, 131073, 131082, 0, 131074, 131090, 0, 131072, 131091, 0, 131073, 131092, 0, 131073, 131093, 0, 65542, 131094, 0, 65537, 131095, 0, 65537, 131096, 0, 65537, 131097, 0, 65537, 131098, 0, 65537, 131099, 0, 65537, 131100, 0, 65537, 131101, 0, 65537, 131102, 0, 65537, 131103, 0, 65537, 131104, 0, 65537, 131105, 0, 65537, 131106, 0, 65537, 131107, 0, 65537, 131108, 0, 65541, 131109, 0, 131073, 131110, 0, 131073, 131111, 0, 131074, 262136, 0, 131072, 262137, 0, 131073, 262138, 0, 131073, 262139, 0, 131073, 262140, 0, 131073, 262141, 0, 131073, 262142, 0, 131073, 262143, 0, 131073, 196608, 0, 131073, 196609, 0, 131073, 196610, 0, 131073, 196611, 0, 131073, 196612, 0, 131073, 196613, 0, 131073, 196614, 0, 131073, 196615, 0, 131074, 196629, 0, 131072, 196630, 0, 131073, 196631, 0, 131073, 196632, 0, 131073, 196633, 0, 131073, 196634, 0, 131073, 196635, 0, 131073, 196636, 0, 131073, 196637, 0, 131073, 196638, 0, 131073, 196639, 0, 131073, 196640, 0, 131073, 196641, 0, 131073, 196642, 0, 131073, 196643, 0, 131073, 196644, 0, 131074 )
+
+[node name="TeleportArea" type="Area2D" parent="."]
+collision_layer = 4294967295
+collision_mask = 4294967295
+script = ExtResource( 9 )
+
+[node name="Teleport_Right" type="Position2D" parent="TeleportArea"]
+position = Vector2( 1800, -64 )
+
+[node name="Teleport_Left" type="Position2D" parent="TeleportArea"]
+position = Vector2( -1800, -64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportArea"]
+position = Vector2( -7080, 864 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TeleportArea"]
+position = Vector2( 7080, 864 )
+shape = SubResource( 1 )
+
+[node name="Dummy" parent="." instance=ExtResource( 12 )]
+position = Vector2( -1844, -95 )
+
+[node name="Dummy2" parent="." instance=ExtResource( 12 )]
+position = Vector2( -1703, -93 )
+
+[node name="Dummy3" parent="." instance=ExtResource( 12 )]
+position = Vector2( -1774, -128 )
+
+[node name="Dummy4" parent="." instance=ExtResource( 12 )]
+position = Vector2( -1633, -123 )
+
+[node name="Dummy5" parent="." instance=ExtResource( 12 )]
+position = Vector2( -1572, -90 )
+
+[node name="Dummy6" parent="." instance=ExtResource( 12 )]
+position = Vector2( -1492, -93 )
+
+[node name="Dummy7" parent="." instance=ExtResource( 12 )]
+position = Vector2( -1351, -91 )
+
+[node name="Dummy8" parent="." instance=ExtResource( 12 )]
+position = Vector2( -1422, -126 )
+
+[node name="Dummy9" parent="." instance=ExtResource( 12 )]
+position = Vector2( -1281, -121 )
+
+[node name="Dummy10" parent="." instance=ExtResource( 12 )]
+position = Vector2( -1220, -88 )
+
+[node name="Dummy11" parent="." instance=ExtResource( 12 )]
+position = Vector2( -1157, -91 )
+
+[node name="Dummy12" parent="." instance=ExtResource( 12 )]
+position = Vector2( -1016, -89 )
+
+[node name="Dummy13" parent="." instance=ExtResource( 12 )]
+position = Vector2( -1087, -124 )
+
+[node name="Dummy14" parent="." instance=ExtResource( 12 )]
+position = Vector2( -946, -119 )
+
+[node name="Dummy15" parent="." instance=ExtResource( 12 )]
+position = Vector2( -885, -86 )
+
+[node name="Dummy16" parent="." instance=ExtResource( 12 )]
+position = Vector2( -810, -80 )
+
+[node name="Dummy17" parent="." instance=ExtResource( 12 )]
+position = Vector2( -669, -78 )
+
+[node name="Dummy18" parent="." instance=ExtResource( 12 )]
+position = Vector2( -740, -113 )
+
+[node name="Dummy19" parent="." instance=ExtResource( 12 )]
+position = Vector2( -599, -108 )
+
+[node name="Dummy20" parent="." instance=ExtResource( 12 )]
+position = Vector2( -538, -75 )
+
+[node name="Dummy21" parent="." instance=ExtResource( 12 )]
+position = Vector2( -482, -95 )
+
+[node name="Dummy22" parent="." instance=ExtResource( 12 )]
+position = Vector2( -341, -93 )
+
+[node name="Dummy23" parent="." instance=ExtResource( 12 )]
+position = Vector2( -412, -128 )
+
+[node name="Dummy24" parent="." instance=ExtResource( 12 )]
+position = Vector2( -271, -123 )
+
+[node name="Dummy25" parent="." instance=ExtResource( 12 )]
+position = Vector2( -210, -90 )
+
+[node name="Dummy26" parent="." instance=ExtResource( 12 )]
+position = Vector2( -123, -88 )
+
+[node name="Dummy27" parent="." instance=ExtResource( 12 )]
+position = Vector2( 18, -86 )
+
+[node name="Dummy28" parent="." instance=ExtResource( 12 )]
+position = Vector2( -53, -121 )
+
+[node name="Dummy29" parent="." instance=ExtResource( 12 )]
+position = Vector2( 88, -116 )
+
+[node name="Dummy30" parent="." instance=ExtResource( 12 )]
+position = Vector2( 149, -83 )
+
+[node name="Dummy31" parent="." instance=ExtResource( 12 )]
+position = Vector2( 229, -86 )
+
+[node name="Dummy32" parent="." instance=ExtResource( 12 )]
+position = Vector2( 370, -84 )
+
+[node name="Dummy33" parent="." instance=ExtResource( 12 )]
+position = Vector2( 299, -119 )
+
+[node name="Dummy34" parent="." instance=ExtResource( 12 )]
+position = Vector2( 440, -114 )
+
+[node name="Dummy35" parent="." instance=ExtResource( 12 )]
+position = Vector2( 501, -81 )
+
+[node name="Dummy36" parent="." instance=ExtResource( 12 )]
+position = Vector2( 564, -84 )
+
+[node name="Dummy37" parent="." instance=ExtResource( 12 )]
+position = Vector2( 705, -82 )
+
+[node name="Dummy38" parent="." instance=ExtResource( 12 )]
+position = Vector2( 634, -117 )
+
+[node name="Dummy39" parent="." instance=ExtResource( 12 )]
+position = Vector2( 775, -112 )
+
+[node name="Dummy40" parent="." instance=ExtResource( 12 )]
+position = Vector2( 836, -79 )
+
+[node name="Dummy41" parent="." instance=ExtResource( 12 )]
+position = Vector2( 911, -73 )
+
+[node name="Dummy42" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1052, -71 )
+
+[node name="Dummy43" parent="." instance=ExtResource( 12 )]
+position = Vector2( 981, -106 )
+
+[node name="Dummy44" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1122, -101 )
+
+[node name="Dummy45" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1183, -68 )
+
+[node name="Dummy46" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1239, -88 )
+
+[node name="Dummy47" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1380, -86 )
+
+[node name="Dummy48" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1309, -121 )
+
+[node name="Dummy49" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1450, -116 )
+
+[node name="Dummy50" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1511, -83 )
+
+[node name="Strangeguy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1659, -88 )
+
+[node name="Star Eater" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1759, -76 )
+
+[node name="Star Eater2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1955, -61 )
+
+[connection signal="body_entered" from="TeleportArea" to="TeleportArea" method="_on_TeleportArea_body_entered"]
